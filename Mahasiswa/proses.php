@@ -1,5 +1,5 @@
 <?php
-require 'koneksi.php'; // koneksi ke database
+require __DIR__ . '/../koneksi.php'; // koneksi ke database
 
 // ===============================
 // CREATE
@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
     $query = $koneksi->query($sql);
 
     if ($query) {
-        header('Location: index.php');
+         header('Location: ../index.php?p=mahasiswa');
     } else {
         echo "Gagal menyimpan data";
     }
@@ -43,7 +43,7 @@ if (isset($_POST['update'])) {
     $query = $koneksi->query($sql);
 
     if ($query) {
-        header('Location: index.php');
+        header('Location: ../index.php?p=mahasiswa');
     } else {
         echo "Gagal mengupdate data";
     }
@@ -61,7 +61,7 @@ if (isset($_GET['aksi']) && $_GET['aksi'] == 'hapus') {
     $query = $koneksi->query("DELETE FROM mahasiswa WHERE nim='$nim'");
 
     if ($query) {
-        header('Location: index.php');
+        header('Location: ../index.php?p=mahasiswa');
     } else {
         echo "Gagal menghapus data";
     }

@@ -27,7 +27,7 @@
 
             <tbody>
                 <?php
-                require 'koneksi.php';
+                require __DIR__ . '/../koneksi.php';
 
                 $tampil = $koneksi->query("SELECT * FROM mahasiswa");
                 $no = 1;
@@ -45,7 +45,7 @@
 
                     <td>
                         <a href="index.php?p=edit&key=<?= $row['nim'] ?>" class="btn btn-warning btn-sm">Edit</a>
-                        <a href="proses.php?key=<?= $row['nim'] ?>&aksi=hapus" 
+                        <a href="Mahasiswa/proses.php?key=<?= $row['nim'] ?>&aksi=hapus" 
                            class="btn btn-danger btn-sm"
                            onclick="return confirm('Apakah anda yakin ingin menghapus data ini?')">
                            Hapus

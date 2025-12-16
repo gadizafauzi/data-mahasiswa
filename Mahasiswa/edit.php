@@ -1,7 +1,7 @@
 <h1>Edit Data Mahasiswa</h1>
 
 <?php 
-require 'koneksi.php';
+require __DIR__ . '/../koneksi.php';
 
 $nim = $_GET['key'];
 
@@ -9,14 +9,14 @@ $edit = $koneksi->query("SELECT * FROM mahasiswa WHERE nim = '$nim'");
 $data = $edit->fetch_assoc();
 ?>
 
-<form action="proses.php" method="POST">
+<form action="Mahasiswa/proses.php" method="POST">
     <input type="text" name="nim" value="<?= $data['nim'] ?>" hidden>
 
     <div class="mb-3">
         <label for="nama_mhs" class="form-label">Nama Mahasiswa</label>
         <input type="text" class="form-control" name="nama_mhs" 
                value="<?= $data['nama_mhs'] ?>" required>
-    </div>
+    </div> 
 
     <div class="mb-3">
         <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
@@ -31,7 +31,7 @@ $data = $edit->fetch_assoc();
 
     <div class="mb-3">
         <input type="submit" name="update" class="btn btn-primary" value="Update">
-        <a href="index.php?p=mahasiswa" class="btn btn-secondary">Kembali ke List</a>
+        <a href="../index.php?p=mahasiswa" class="btn btn-secondary">Kembali ke List</a>
     </div>
 
 </form>

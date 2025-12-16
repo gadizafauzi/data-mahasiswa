@@ -15,21 +15,21 @@
         <div class="carousel-inner rounded">
 
             <div class="carousel-item active">
-                <img src="https://picsum.photos/900/400?random=1" class="d-block w-100" alt="kampus1">
+                <img src="https://picsum.photos/900/400?random=1" class="d-block w-100" alt="a">
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
                     <h5>Sistem Akademik </h5>
                 </div>
             </div>
 
             <div class="carousel-item">
-                <img src="https://picsum.photos/900/400?random=2" class="d-block w-100" alt="kampus2">
+                <img src="https://picsum.photos/900/400?random=2" class="d-block w-100" alt="b">
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
                     <h5>Manajemen Data Mahasiswa</h5>
                 </div>
             </div>
 
             <div class="carousel-item">
-                <img src="https://picsum.photos/900/400?random=3" class="d-block w-100" alt="kampus3">
+                <img src="https://picsum.photos/900/400?random=3" class="d-block w-100" alt="c">
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
                     <h5>Informasi Akademik Terintegrasi</h5>
                 </div>

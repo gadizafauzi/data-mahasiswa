@@ -32,22 +32,34 @@
              href="index.php?p=mahasiswa">Mahasiswa</a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link text-white <?= (isset($_GET['p']) && $_GET['p'] == 'program_studi') ? 'active' : '' ?>" 
+             href="index.php?p=program_studi">Program Studi</a>
+        </li>
+
+
+
       </ul>
     </div>
   </div>
 </nav>
-
-
 
 <div class="container my-4">
 
   <?php 
     $page = isset($_GET['p']) ? $_GET['p'] : 'home';
 
-    if ($page == 'home') include 'home.php';
-    if ($page == 'mahasiswa') include 'list.php';   // select
-    if ($page == 'create') include 'create.php';     // insert
-    if ($page == 'edit') include 'edit.php';         // update/edit
+   switch ($page) {
+      case 'home': include 'home.php'; break;
+      case 'mahasiswa': include 'Mahasiswa/list.php'; break; 
+      case 'create': include 'Mahasiswa/create.php'; break;
+      case 'edit': include 'Mahasiswa/edit.php'; break;
+      case 'program_studi': include 'ProgramStudi/list.php'; break;
+      case 'ps_create': include 'ProgramStudi/create.php'; break;
+      case 'ps_edit': include 'ProgramStudi/edit.php'; break;
+      default: echo "404";
+    }
+
   ?>
 
 </div>

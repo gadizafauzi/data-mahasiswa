@@ -1,6 +1,6 @@
 
     <h1>Input Data Mahasiswa</h1>
-    <form action="proses.php" method="post">
+    <form action="Mahasiswa/proses.php" method="post">
         <div class="mb-3">
             <label for="nim" class="form-label">NIM</label>
             <input type="text" class="form-control" id="nim" name="nim" pattern="[0-9]{8,12}" required>
@@ -23,6 +23,6 @@
 
         <div class="mb-3">
             <input type="submit" name="submit" class="btn btn-primary">
-            <a href = "index.php" class="btn btn-secondary">List Data Mahasiswa</a>
+            <a href="index.php?p=mahasiswa" class="btn btn-secondary">List Data Mahasiswa</a>
         </div>
     </form>
