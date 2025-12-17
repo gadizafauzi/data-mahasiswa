@@ -3,6 +3,9 @@
 <?php 
 require __DIR__ . '/../koneksi.php';
 
+$prodi = $koneksi->query("SELECT * FROM program_studi");
+
+
 $nim = $_GET['key'];
 
 $edit = $koneksi->query("SELECT * FROM mahasiswa WHERE nim = '$nim'");
@@ -28,6 +31,22 @@ $data = $edit->fetch_assoc();
         <label for="alamat" class="form-label">Alamat</label>
         <textarea class="form-control" name="alamat" rows="3"><?= $data['alamat'] ?></textarea>
     </div>
+
+ <div class="mb-3">
+    <label class="form-label">Program Studi</label>
+    <select name="prodi_id" class="form-control" required>
+
+        <?php while ($p = $prodi->fetch_assoc()) : ?>
+            <option value="<?= $p['id'] ?>"
+                <?= ($p['id'] == $data['prodi_id']) ? 'selected' : '' ?>>
+                <?= $p['nama_prodi'] ?>
+            </option>
+        <?php endwhile; ?>
+
+    </select>
+</div>
+
+
 
     <div class="mb-3">
         <input type="submit" name="update" class="btn btn-primary" value="Update">

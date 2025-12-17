@@ -21,6 +21,7 @@
                     <th scope="col">Nama</th>
                     <th scope="col">Tanggal Lahir</th>
                     <th scope="col">Alamat</th>
+                    <th scope="col">Program Studi</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -29,8 +30,20 @@
                 <?php
                 require __DIR__ . '/../koneksi.php';
 
-                $tampil = $koneksi->query("SELECT * FROM mahasiswa");
-                $no = 1;
+            // QUERY JOIN
+            $query = "
+                SELECT 
+                    m.nim,
+                    m.nama_mhs,
+                    m.tgl_lahir,
+                    m.alamat,
+                    p.nama_prodi
+                FROM mahasiswa m
+                JOIN program_studi p ON m.prodi_id = p.id
+            ";
+
+            $tampil = $koneksi->query($query);
+            $no = 1;
 
                 $data = $tampil->fetch_all(MYSQLI_ASSOC);
 
@@ -42,6 +55,7 @@
                     <td><?= $row['nama_mhs'] ?></td>
                     <td><?= date('d M Y', strtotime($row['tgl_lahir'])) ?></td>
                     <td><?= $row['alamat'] ?></td>
+                    <td><?= $row['nama_prodi'] ?></td>
 
                     <td>
                         <a href="index.php?p=edit&key=<?= $row['nim'] ?>" class="btn btn-warning btn-sm">Edit</a>
