@@ -1,3 +1,11 @@
+<?php
+//session | cokies
+session_start();
+if(!isset($_SESSION['login'])){
+  header("Location: login.php");
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,6 +43,11 @@
         <li class="nav-item">
           <a class="nav-link text-white <?= (isset($_GET['p']) && $_GET['p'] == 'program_studi') ? 'active' : '' ?>" 
              href="index.php?p=program_studi">Program Studi</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white <?= (isset($_GET['p']) && $_GET['p'] == 'program_studi') ? 'active' : '' ?>" 
+             href="index.php?p=program_studi">Logout</a>
         </li>
 
 

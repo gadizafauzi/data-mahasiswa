@@ -3,6 +3,8 @@
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Sistem Akademik Kampus</h1>
             <p class="col-md-8 fs-5 mt-3">
+            <h1>Selamat Datang <?= $_SESSION['nama_lengkap']; ?></h1>
+            
                 Manajemen Data Mahasiswa • Informasi Akademik • Dashboard CRUD
             </p>
             <a href="index.php?p=create" class="btn btn-primary btn-lg mt-2">
