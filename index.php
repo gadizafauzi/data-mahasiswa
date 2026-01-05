@@ -46,12 +46,11 @@ if(!isset($_SESSION['login'])){
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white <?= (isset($_GET['p']) && $_GET['p'] == 'program_studi') ? 'active' : '' ?>" 
-             href="index.php?p=program_studi">Logout</a>
+          <a class="nav-link text-white" href="logout.php"
+            onclick="return confirm('Yakin ingin logout?')">
+            Logout
+          </a>
         </li>
-
-
-
       </ul>
     </div>
   </div>
