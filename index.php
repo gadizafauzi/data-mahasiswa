@@ -17,41 +17,56 @@ if(!isset($_SESSION['login'])){
 
   <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container ">
-    <a class="navbar-brand text-white" href="#">Akademik</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    
+    <a class="navbar-brand fw-semibold" href="index.php">
+        Akademik
+    </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
 
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link text-white <?= (!isset($_GET['p']) || $_GET['p'] == 'home') ? 'active' : '' ?>" 
+          <a class="nav-link <?= (!isset($_GET['p']) || $_GET['p'] == 'home') ? 'active' : '' ?>"
              href="index.php">Home</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white <?= (isset($_GET['p']) && $_GET['p'] == 'mahasiswa') ? 'active' : '' ?>" 
+          <a class="nav-link <?= ($_GET['p'] ?? '') == 'mahasiswa' ? 'active' : '' ?>"
              href="index.php?p=mahasiswa">Mahasiswa</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white <?= (isset($_GET['p']) && $_GET['p'] == 'program_studi') ? 'active' : '' ?>" 
+          <a class="nav-link <?= ($_GET['p'] ?? '') == 'program_studi' ? 'active' : '' ?>"
              href="index.php?p=program_studi">Program Studi</a>
         </li>
+      </ul>
 
-        <li class="nav-item">
-          <a class="nav-link text-white" href="logout.php"
-            onclick="return confirm('Yakin ingin logout?')">
-            Logout
+      <!-- User Dropdown -->
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-bs-toggle="dropdown">
+             👤 <?= $_SESSION['nama_lengkap']; ?>
           </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item text-danger"
+                 href="logout.php"
+                 onclick="return confirm('Yakin ingin logout?')">
+                Logout
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
