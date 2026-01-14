@@ -29,7 +29,7 @@
                     <div class="mb-3">
                         <label class="form-label small text-muted">Password</label>
                         <input type="password" name="password" class="form-control rounded-3"
-                               placeholder="••••••••" required>
+                               placeholder="•••••••••" required>
                     </div>
 
                     <div class="d-grid mt-4">
