@@ -57,6 +57,12 @@ if(!isset($_SESSION['login'])){
           </a>
           <ul class="dropdown-menu dropdown-menu-end">
             <li>
+              <a class="dropdown-item text-dark"
+                 href="edit_profil.php">
+                Edit Profil
+              </a>
+            </li>
+            <li>
               <a class="dropdown-item text-danger"
                  href="logout.php"
                  onclick="return confirm('Yakin ingin logout?')">
