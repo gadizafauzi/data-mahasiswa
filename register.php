@@ -16,7 +16,6 @@
 
                 <div class="text-center mb-4">
                     <h3 class="fw-semibold text-dark">Registrasi Akun</h3>
-                    <p class="text-muted small mb-0">Buat akun baru sistem akademik</p>
                 </div>
 
                 <form method="POST">
@@ -30,7 +29,7 @@
                     <div class="mb-3">
                         <label class="form-label small text-muted">Email</label>
                         <input type="email" name="email" class="form-control rounded-3"
-                               placeholder="email@kampus.ac.id" required>
+                               placeholder="contoh@gmail.com" required>
                     </div>
 
                     <div class="mb-3">
